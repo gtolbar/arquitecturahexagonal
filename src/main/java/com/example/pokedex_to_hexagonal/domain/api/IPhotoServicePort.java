@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IPhotoServicePort {
 
-    void savePhoto(Photo photo);
+    Photo savePhoto(Photo photo);
 
     List<Photo> getAllPhoto();
 
