@@ -26,7 +26,7 @@ public class PhoteUseCase implements IPhotoServicePort {
     }
 
     @Override
-    public Photo getPhoto(Long photoNumber) {
+    public Photo getPhoto(String photoNumber) {
         return photoPersistencePort.getPhoto(photoNumber);
     }
 

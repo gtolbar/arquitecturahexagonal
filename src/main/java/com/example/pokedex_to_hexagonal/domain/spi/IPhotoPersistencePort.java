@@ -10,7 +10,7 @@ public interface IPhotoPersistencePort {
 
     List<Photo> getAllPhoto();
 
-    Photo getPhoto(Long photoNumber);
+    Photo getPhoto(String photoNumber);
 
     void updatePhoto(Photo photo);
 

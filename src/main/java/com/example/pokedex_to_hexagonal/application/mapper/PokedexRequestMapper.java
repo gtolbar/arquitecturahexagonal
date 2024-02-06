@@ -1,4 +1,4 @@
-package com.example.pokedex_to_hexagonal.application.maper;
+package com.example.pokedex_to_hexagonal.application.mapper;
 
 import com.example.pokedex_to_hexagonal.application.dto.PokedexRequest;
 import com.example.pokedex_to_hexagonal.domain.model.Photo;

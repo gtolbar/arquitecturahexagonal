@@ -5,9 +5,9 @@ public class Pokemon {
     private Long id;
     private String name;
     private Long number;
-    private Long photoId;
+    private String photoId;
 
-    public Pokemon(Long id, String name, Long number, Long photoId) {
+    public Pokemon(Long id, String name, Long number, String photoId) {
         this.id = id;
         this.name = name;
         this.number = number;
@@ -48,11 +48,11 @@ public class Pokemon {
         this.number = number;
     }
 
-    public Long getPhotoId() {
+    public String getPhotoId() {
         return photoId;
     }
 
-    public void setPhotoId(Long photoId) {
+    public void setPhotoId(String photoId) {
         this.photoId = photoId;
     }
 }
