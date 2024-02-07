@@ -36,6 +36,7 @@ public interface PokedexResponseMapper {
                 }).toList();
     }
 
+    @Mapping(target = "photo",qualifiedByName = "byteArrayToBase64" )
     PokedexResponse toResponse(Pokemon pokemonList, Photo photoList);
     // investigar sobre programacion funcional
 }

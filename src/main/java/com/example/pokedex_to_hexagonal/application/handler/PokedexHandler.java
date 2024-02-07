@@ -47,11 +47,20 @@ public class PokedexHandler implements IPokedexHandler{
 
     @Override
     public void updatePokemonInPokedex(PokedexRequest pokedexRequest) {
-
+        Pokemon oldPokemon = pokemonServicePort.getPokemon(pokedexRequest.getNumber());
+        Photo newPhoto = pokedexRequestMapper.toPhoto(pokedexRequest);
+        newPhoto.setId(oldPokemon.getPhotoId());
+        photoServicePort.updatePhoto(newPhoto);
+        Pokemon newPokemon = pokedexRequestMapper.toPokemon(pokedexRequest);
+        newPokemon.setId(oldPokemon.getId());
+        newPokemon.setPhotoId(newPhoto.getId());
+        pokemonServicePort.updatePokemon(newPokemon);
     }
 
     @Override
     public void deletePokemonFromPokedex(Long pokemonNumber) {
-
+        Pokemon pokemon = pokemonServicePort.getPokemon(pokemonNumber);
+        photoServicePort.deletePhoto(pokemon.getId());
+        pokemonServicePort.deletePokemon(pokemonNumber);
     }
 }
