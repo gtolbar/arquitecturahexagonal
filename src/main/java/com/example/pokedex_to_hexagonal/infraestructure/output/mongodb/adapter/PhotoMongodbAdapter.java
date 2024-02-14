@@ -5,7 +5,7 @@ import com.example.pokedex_to_hexagonal.domain.spi.IPhotoPersistencePort;
 import com.example.pokedex_to_hexagonal.infraestructure.exception.NoDataFoundException;
 import com.example.pokedex_to_hexagonal.infraestructure.exception.PhotoNotFoundException;
 import com.example.pokedex_to_hexagonal.infraestructure.output.mongodb.entity.PhotoEntity;
-import com.example.pokedex_to_hexagonal.infraestructure.output.mongodb.mapper.PhothoEntityMapper;
+import com.example.pokedex_to_hexagonal.infraestructure.output.mongodb.mapper.PhotoEntityMapper;
 import com.example.pokedex_to_hexagonal.infraestructure.output.mongodb.repository.IPhotoRepository;
 import lombok.RequiredArgsConstructor;
 
@@ -15,7 +15,7 @@ import java.util.List;
 public class PhotoMongodbAdapter implements IPhotoPersistencePort {
 
     private final IPhotoRepository photoRepository;
-    private final PhothoEntityMapper photoEntityMapper;
+    private final PhotoEntityMapper photoEntityMapper;
 
     @Override
     public Photo savePhoto(Photo photo) {
