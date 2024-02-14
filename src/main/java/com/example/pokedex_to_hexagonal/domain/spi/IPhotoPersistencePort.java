@@ -6,14 +6,14 @@ import java.util.List;
 
 public interface IPhotoPersistencePort {
 
-    void savePhoto(Photo photo);
+    Photo savePhoto(Photo photo);
 
     List<Photo> getAllPhoto();
 
-    Photo getPhoto(String photoNumber);
+    Photo getPhoto(String photoId);
 
     void updatePhoto(Photo photo);
 
-    void deletePhoto(Long photo);
+    void deletePhoto(String photoId);
 
 }

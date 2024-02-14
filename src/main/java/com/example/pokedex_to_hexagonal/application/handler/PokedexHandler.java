@@ -60,7 +60,7 @@ public class PokedexHandler implements IPokedexHandler{
     @Override
     public void deletePokemonFromPokedex(Long pokemonNumber) {
         Pokemon pokemon = pokemonServicePort.getPokemon(pokemonNumber);
-        photoServicePort.deletePhoto(pokemon.getId());
+        photoServicePort.deletePhoto(pokemon.getPhotoId());
         pokemonServicePort.deletePokemon(pokemonNumber);
     }
 }

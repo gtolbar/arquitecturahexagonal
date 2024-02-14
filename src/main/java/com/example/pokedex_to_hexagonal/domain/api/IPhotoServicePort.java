@@ -14,6 +14,6 @@ public interface IPhotoServicePort {
 
     void updatePhoto(Photo photo);
 
-    void deletePhoto(Long photo);
+    void deletePhoto(String photoId);
 
 }
