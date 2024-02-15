@@ -5,6 +5,7 @@ import com.example.pokedex_to_hexagonal.domain.model.Photo;
 import com.example.pokedex_to_hexagonal.domain.model.Pokemon;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.Named;
 import org.mapstruct.ReportingPolicy;
 
 import java.util.Base64;
@@ -15,7 +16,11 @@ import java.util.List;
         unmappedSourcePolicy = ReportingPolicy.IGNORE )
 public interface PokedexResponseMapper {
 
-    @Mapping(target = "photo", qualifiedByName = "byteArrayToBase64")
+    @Mapping(target = "photo",qualifiedByName = "byteArrayToBase64" )
+    PokedexResponse toResponse(Pokemon pokemon, Photo photo);
+    // investigar sobre programacion funcional
+
+    @Named("byteArrayToBase64")
     static String byteArrayToBase64(byte[] byteArrayPhoto){
         return Base64.getEncoder().encodeToString(byteArrayPhoto);
     }
@@ -36,7 +41,5 @@ public interface PokedexResponseMapper {
                 }).toList();
     }
 
-    @Mapping(target = "photo",qualifiedByName = "byteArrayToBase64" )
-    PokedexResponse toResponse(Pokemon pokemonList, Photo photoList);
-    // investigar sobre programacion funcional
+
 }
